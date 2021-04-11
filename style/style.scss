@@ -1,0 +1,44 @@
+body{
+    background-color: lightseagreen;
+}
+
+ul {
+    width: 600px;
+    margin: auto;
+    li {
+        padding: 5px 0;
+    }
+}
+
+.accordion {
+    list-style-type: none;
+    font-family: "Times New Roman", Times, serif;
+
+    .accordion__title {
+        display: flex;
+        justify-content: space-between;
+        font-size: large;
+        cursor: pointer;
+        background-color: rgb(240, 236, 236);
+        align-items: center;
+        padding: 10px 5px;
+        border-bottom: rgb(168, 168, 168) solid 1px;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .accordion__description {
+        padding: 10px 5px;
+        background-color: white;
+    }
+
+    .accordion__description_open {
+        display: block;
+    }
+
+    .accordion__description_close {
+        display: none;
+    }
+}
