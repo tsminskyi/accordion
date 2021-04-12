@@ -30,10 +30,6 @@ ul {
         align-items: center;
         padding: 10px 5px;
         border-bottom: rgb(168, 168, 168) solid 1px;
-        img {
-            width: 20px;
-            height: 20px;
-        }
     }
 
     .accordion__description {
@@ -48,5 +44,29 @@ ul {
 
     .accordion__description_close {
         display: none;
+    }
+
+    .accordion__btn {
+        display: flex;
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .accordion__btn_open {
+        :first-child {
+            display: none;
+        }
+        :last-child {
+            display: block;
+        }
+    }
+    .accordion__btn_close {
+        :first-child {
+            display: block;
+        }
+        :last-child {
+            display: none;
+        }
     }
 }

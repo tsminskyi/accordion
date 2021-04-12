@@ -33,11 +33,6 @@ ul li input {
   border-bottom: #a8a8a8 solid 1px;
 }
 
-.accordion .accordion__title img {
-  width: 20px;
-  height: 20px;
-}
-
 .accordion .accordion__description {
   padding: 10px 5px;
   background-color: white;
@@ -49,5 +44,30 @@ ul li input {
 }
 
 .accordion .accordion__description_close {
+  display: none;
+}
+
+.accordion .accordion__btn {
+  display: flex;
+}
+
+.accordion .accordion__btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.accordion .accordion__btn_open :first-child {
+  display: none;
+}
+
+.accordion .accordion__btn_open :last-child {
+  display: block;
+}
+
+.accordion .accordion__btn_close :first-child {
+  display: block;
+}
+
+.accordion .accordion__btn_close :last-child {
   display: none;
 }

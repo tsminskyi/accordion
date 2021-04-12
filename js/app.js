@@ -1,4 +1,16 @@
-function accordionAction(elem, openIMG, closeIMG) {
+
+const accordionBlock = document.querySelectorAll("li")
+accordionBlock.forEach(element => {
+
+    if (element.classList.contains("accordion")) {
+
+        element.firstElementChild
+            .addEventListener("click", () => accordionAction(element.firstElementChild));
+    }
+
+});
+
+function accordionAction(elem) {
 
     const currentAccDescrip = elem.parentNode.lastElementChild;
     const accordionInterf = elem.parentNode.parentNode.querySelector("input[type='radio']:checked")
@@ -12,7 +24,9 @@ function accordionAction(elem, openIMG, closeIMG) {
 
             currentAccDescrip.classList.remove("accordion__description_close");
 
-            currentAccDescrip.parentNode.firstElementChild.lastElementChild.setAttribute("src", closeIMG)
+            const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
+            btn.classList.add("accordion__btn_open");
+            btn.classList.remove("accordion__btn_close");
 
         } else {
 
@@ -20,7 +34,9 @@ function accordionAction(elem, openIMG, closeIMG) {
 
             currentAccDescrip.classList.remove("accordion__description_open");
 
-            currentAccDescrip.parentNode.firstElementChild.lastElementChild.setAttribute("src", openIMG)
+            const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
+            btn.classList.add("accordion__btn_close");
+            btn.classList.remove("accordion__btn_open");
         }
 
     } else {
@@ -30,12 +46,17 @@ function accordionAction(elem, openIMG, closeIMG) {
             element.classList.remove("accordion__description_open")
             element.classList.add("accordion__description_close")
 
-            element.parentNode.firstElementChild.lastElementChild.setAttribute("src", openIMG)
+            const btn = element.parentNode.querySelector(".accordion__btn");
+            btn.classList.add("accordion__btn_close");
+            btn.classList.remove("accordion__btn_open");
 
         })
 
         currentAccDescrip.classList.add("accordion__description_open");
         currentAccDescrip.classList.remove("accordion__description_close");
-        currentAccDescrip.parentNode.firstElementChild.lastElementChild.setAttribute("src", closeIMG)
+
+        const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
+        btn.classList.add("accordion__btn_open");
+        btn.classList.remove("accordion__btn_close");
     }
 }
