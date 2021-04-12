@@ -18,26 +18,7 @@ function accordionAction(elem) {
 
     if (accordionInterf.value == "one") {
 
-        if (currentAccDescrip.classList.contains("accordion__description_close")) {
-
-            currentAccDescrip.classList.add("accordion__description_open");
-
-            currentAccDescrip.classList.remove("accordion__description_close");
-
-            const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
-            btn.classList.add("accordion__btn_open");
-            btn.classList.remove("accordion__btn_close");
-
-        } else {
-
-            currentAccDescrip.classList.add("accordion__description_close");
-
-            currentAccDescrip.classList.remove("accordion__description_open");
-
-            const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
-            btn.classList.add("accordion__btn_close");
-            btn.classList.remove("accordion__btn_open");
-        }
+        switchState(currentAccDescrip)
 
     } else {
 
@@ -45,28 +26,7 @@ function accordionAction(elem) {
 
             if (currentAccDescrip == element) {
 
-                if (currentAccDescrip.classList.contains("accordion__description_open")) {
-
-                    console.log("sdfasdf")
-
-                    currentAccDescrip.classList.add("accordion__description_close");
-
-                    currentAccDescrip.classList.remove("accordion__description_open");
-
-                    const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
-                    btn.classList.add("accordion__btn_close");
-                    btn.classList.remove("accordion__btn_open");
-
-                } else {
-
-                    currentAccDescrip.classList.add("accordion__description_open");
-
-                    currentAccDescrip.classList.remove("accordion__description_close");
-
-                    const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
-                    btn.classList.add("accordion__btn_open");
-                    btn.classList.remove("accordion__btn_close");
-                }
+                switchState(currentAccDescrip)
             }
             else {
                 element.classList.remove("accordion__description_open")
@@ -78,5 +38,28 @@ function accordionAction(elem) {
             }
 
         })
+    }
+}
+
+function switchState(elem) {
+    if (elem.classList.contains("accordion__description_close")) {
+
+        elem.classList.add("accordion__description_open");
+
+        elem.classList.remove("accordion__description_close");
+
+        const btn = elem.parentNode.querySelector(".accordion__btn");
+        btn.classList.add("accordion__btn_open");
+        btn.classList.remove("accordion__btn_close");
+
+    } else {
+
+        elem.classList.add("accordion__description_close");
+
+        elem.classList.remove("accordion__description_open");
+
+        const btn = elem.parentNode.querySelector(".accordion__btn");
+        btn.classList.add("accordion__btn_close");
+        btn.classList.remove("accordion__btn_open");
     }
 }
