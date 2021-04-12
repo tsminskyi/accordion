@@ -9,6 +9,12 @@ ul {
 
 ul li {
   padding: 5px 0;
+  list-style-type: none;
+}
+
+ul li label,
+ul li input {
+  cursor: pointer;
 }
 
 .accordion {
@@ -35,6 +41,7 @@ ul li {
 .accordion .accordion__description {
   padding: 10px 5px;
   background-color: white;
+  display: block;
 }
 
 .accordion .accordion__description_open {

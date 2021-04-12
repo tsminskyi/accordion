@@ -1,4 +1,4 @@
-body{
+body {
     background-color: lightseagreen;
 }
 
@@ -7,6 +7,13 @@ ul {
     margin: auto;
     li {
         padding: 5px 0;
+
+        //для переключателя
+        list-style-type: none;
+        label,
+        input {
+            cursor: pointer;
+        }
     }
 }
 
@@ -32,6 +39,7 @@ ul {
     .accordion__description {
         padding: 10px 5px;
         background-color: white;
+        display: block;
     }
 
     .accordion__description_open {

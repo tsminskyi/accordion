@@ -11,11 +11,17 @@
 
 <body>
     <div>
-
         <ul>
+            <li>
+                <span>Only one open answer?: </span>
+                <label for="yes">Yes</label>
+                <input type="radio" id="yes" name="type" value="one" checked>
+                <label for="no">No</label>
+                <input type="radio" id="no" name="type" value="any">
+            </li>
             <li class="accordion">
                 <div class="accordion__title"
-                    onclick="accordionOpen(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
+                    onclick="accordionAction(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
                     <div>accordion 1</div>
                     <img src="./img/plus-solid.svg" alt="">
                 </div>
@@ -27,7 +33,7 @@
             </li>
             <li class="accordion">
                 <div class="accordion__title"
-                    onclick="accordionOpen(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
+                    onclick="accordionAction(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
                     <div>accordion 2</div>
                     <img src="./img/plus-solid.svg" alt="">
                 </div>
@@ -39,7 +45,7 @@
             </li>
             <li class="accordion">
                 <div class="accordion__title"
-                    onclick="accordionOpen(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
+                    onclick="accordionAction(this,'./img/plus-solid.svg','./img/minus-solid.svg')">
                     <div>accordion 3</div>
                     <img src="./img/plus-solid.svg" alt="">
                 </div>
