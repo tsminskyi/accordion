@@ -43,20 +43,40 @@ function accordionAction(elem) {
 
         document.querySelectorAll(".accordion__description").forEach(element => {
 
-            element.classList.remove("accordion__description_open")
-            element.classList.add("accordion__description_close")
+            if (currentAccDescrip == element) {
 
-            const btn = element.parentNode.querySelector(".accordion__btn");
-            btn.classList.add("accordion__btn_close");
-            btn.classList.remove("accordion__btn_open");
+                if (currentAccDescrip.classList.contains("accordion__description_open")) {
+
+                    console.log("sdfasdf")
+
+                    currentAccDescrip.classList.add("accordion__description_close");
+
+                    currentAccDescrip.classList.remove("accordion__description_open");
+
+                    const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
+                    btn.classList.add("accordion__btn_close");
+                    btn.classList.remove("accordion__btn_open");
+
+                } else {
+
+                    currentAccDescrip.classList.add("accordion__description_open");
+
+                    currentAccDescrip.classList.remove("accordion__description_close");
+
+                    const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
+                    btn.classList.add("accordion__btn_open");
+                    btn.classList.remove("accordion__btn_close");
+                }
+            }
+            else {
+                element.classList.remove("accordion__description_open")
+                element.classList.add("accordion__description_close")
+
+                const btn = element.parentNode.querySelector(".accordion__btn");
+                btn.classList.add("accordion__btn_close");
+                btn.classList.remove("accordion__btn_open");
+            }
 
         })
-
-        currentAccDescrip.classList.add("accordion__description_open");
-        currentAccDescrip.classList.remove("accordion__description_close");
-
-        const btn = currentAccDescrip.parentNode.querySelector(".accordion__btn");
-        btn.classList.add("accordion__btn_open");
-        btn.classList.remove("accordion__btn_close");
     }
 }
