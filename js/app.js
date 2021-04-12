@@ -1,7 +1,7 @@
 function accordionAction(elem, openIMG, closeIMG) {
 
     const currentAccDescrip = elem.parentNode.lastElementChild;
-    const accordionInterf = document.querySelector("input[type='radio']:checked")
+    const accordionInterf = elem.parentNode.parentNode.querySelector("input[type='radio']:checked")
 
 
     if (accordionInterf.value == "one") {
