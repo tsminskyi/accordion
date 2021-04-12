@@ -1,4 +1,5 @@
 function accordionAction(elem, openIMG, closeIMG) {
+    
     const currentAccDescrip = elem.parentNode.lastElementChild;
     const accordionInterf = document.querySelector("input[type='radio']:checked")
 
@@ -21,7 +22,6 @@ function accordionAction(elem, openIMG, closeIMG) {
 
     } else {
 
-        console.log("sdf")
         document.querySelectorAll(".accordion__description").forEach(element => {
 
             element.classList.remove("accordion__description_open")
